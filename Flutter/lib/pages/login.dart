@@ -1,14 +1,13 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/registro.dart';
-import 'dart:ui';
+import 'package:flutter_app/pages/routes_list.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/gestures.dart';
 
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return 
-    Container(
+    return Container(
       decoration: BoxDecoration(
         color: Color(0xFFFFFFFF),
         boxShadow: [
@@ -36,7 +35,7 @@ class Login extends StatelessWidget {
               ),
             ),
           ),
-    Container(
+          Container(
             padding: EdgeInsets.fromLTRB(30, 44, 30, 103),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -158,31 +157,38 @@ class Login extends StatelessWidget {
                     ),
                   ),
                 ),
-
-                Container(
-                  margin: EdgeInsets.fromLTRB(0, 0, 0, 33),
+                GestureDetector(
+                  onTap: () {
+                    // Navegar a RoutesList() al presionar el botón
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => RoutesList()),
+                    );
+                  },
                   child: Container(
-                    decoration: BoxDecoration(
-                      color: Color(0xFFE3FEF7),
-                      borderRadius: BorderRadius.circular(40),
-                    ),
-                    width: 308,
-                    padding: EdgeInsets.symmetric(vertical: 18, horizontal: 1.6),
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        'Iniciar Sesión',
-                        style: GoogleFonts.getFont(
-                          'Inter',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 18,
-                          color: Color(0xFF000000),
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 33),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Color(0xFFE3FEF7),
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      width: 308,
+                      padding: EdgeInsets.symmetric(vertical: 18, horizontal: 1.6),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Iniciar Sesión',
+                          style: GoogleFonts.getFont(
+                            'Inter',
+                            fontWeight: FontWeight.w700,
+                            fontSize: 18,
+                            color: Color(0xFF000000),
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-
                 Container(
                   margin: EdgeInsets.fromLTRB(0, 0, 1.6, 0),
                   child: RichText(
@@ -218,7 +224,6 @@ class Login extends StatelessWidget {
                     ),
                   ),
                 ),
-
               ],
             ),
           ),
