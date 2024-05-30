@@ -1,10 +1,11 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_app/models/routes_model.dart';
+import 'package:flutter_app/models/routes_detail_model.dart';
 
 class ApiService {
 
-  static const String baseUrl = 'http://localhost:3000/api';
+  static const String baseUrl = 'http://10.0.2.2:3000/api';
 
   Future<List<RoutesModel>> fetchRoutes() async {
     final response = await http.get(Uri.parse('$baseUrl/rutas'));
@@ -16,10 +17,10 @@ class ApiService {
     }
   }
 
-  Future<RoutesModel> fetchRouteDetail(int id) async {
+  Future<RoutesDetailModel> fetchRouteDetail(int id) async {
     final response = await http.get(Uri.parse('$baseUrl/rutas/$id'));
     if (response.statusCode == 200) {
-      return RoutesModel.fromJson(jsonDecode(response.body));
+      return RoutesDetailModel.fromJson(jsonDecode(response.body));
     } else {
       throw Exception('Error al cargar los detalles de las rutas');
     }

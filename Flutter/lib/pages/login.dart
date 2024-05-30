@@ -4,7 +4,21 @@ import 'package:flutter_app/pages/routes_list.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/gestures.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  bool _obscureText = true;
+
+  void _togglePasswordVisibility() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -122,6 +136,7 @@ class Login extends StatelessWidget {
                               ),
                               SizedBox(height: 20),
                               TextFormField(
+                                obscureText: _obscureText,
                                 decoration: InputDecoration(
                                   labelText: 'Contraseña',
                                   labelStyle: TextStyle(
@@ -132,6 +147,13 @@ class Login extends StatelessWidget {
                                   fillColor: Color(0xFF135D66),
                                   focusedBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(color: Color(0xFF135D66)),
+                                  ),
+                                  suffixIcon: IconButton(
+                                    icon: Icon(
+                                      _obscureText ? Icons.visibility : Icons.visibility_off,
+                                      color: Color(0xFF135D66),
+                                    ),
+                                    onPressed: _togglePasswordVisibility,
                                   ),
                                 ),
                               ),
@@ -159,7 +181,6 @@ class Login extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    // Navegar a RoutesList() al presionar el botón
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => RoutesList()),
