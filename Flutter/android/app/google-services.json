@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "615079607275",
+    "project_id": "sita-fe58f",
+    "storage_bucket": "sita-fe58f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615079607275:android:704a0a439f9c79322b37ae",
+        "android_client_info": {
+          "package_name": "com.example.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "615079607275-l66rpi170h75rkmtf8f5jh2b9g91oh4u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgcRkn2WkvJR97sGRwke-jTrcfxg3PaJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615079607275-l66rpi170h75rkmtf8f5jh2b9g91oh4u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
